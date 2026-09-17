@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Save, visit, and manage your favorite website bookmarks.">
+    <link rel="stylesheet" href="./All i need to code/css/all.min.css">
+    <link rel="stylesheet" href="./All i need to code/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>BookMark</title>
+</head>
+<body>
+    <section>
+        <main>
+            <div class="container py-4 py-md-5">
+                <div class="row">
+                    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+                        <h1 class="main-txt text-center position-relative py-2">Bookmarker</h1>
+
+                        <div class="bookmark-body w-100 py-4 mt-4 mt-md-5 d-flex flex-column justify-content-center align-items-center gap-4 px-3">
+                            <h2 class="text-center">
+                                <i class="darkgreen fa-solid fa-bookmark"></i>
+                                Bookmark your favorite sites
+                                <i class="green fa-solid fa-bookmark"></i>
+                            </h2>
+
+                            <form id="bookmarkForm" class="w-100 d-flex flex-column gap-4" novalidate>
+                                <div class="site-Name w-100 flex-column d-flex justify-content-center">
+                                    <label for="bookMarkName" class="pb-2 fw-semibold">
+                                        <i class="fa-solid fa-book-bookmark pe-2"></i>Site Name
+                                    </label>
+                                    <input type="text" id="bookMarkName" class="form-control" placeholder="BookMark Name"
+                                           maxlength="20" autocomplete="off" oninput="validationName()">
+                                    <p id="msgName" class="alert alert-danger d-none mt-2 mb-0">
+                                        It must start with a letter, be 3 to 20 characters long, and can only contain letters or underscores.
+                                    </p>
+                                </div>
+
+                                <div class="site-url w-100 flex-column d-flex justify-content-center">
+                                    <label for="bookMarkUrl" class="pb-2 fw-semibold">
+                                        <i class="fa-solid fa-link pe-2"></i>Site URL
+                                    </label>
+                                    <input type="url" id="bookMarkUrl" class="form-control" placeholder="Website URL"
+                                           autocomplete="off" oninput="validationUrl()">
+                                    <p id="msgUrl" class="alert alert-danger d-none mt-2 mb-0">
+                                        It seems like there might be an issue with the URL format. Please ensure it follows this structure: https://www.example.com/path/to/resource
+                                    </p>
+                                    <p id="msgDuplicate" class="alert alert-warning d-none mt-2 mb-0">
+                                        That site name is already bookmarked. Try a different name.
+                                    </p>
+                                </div>
+
+                                <button type="submit" class="btn btn-info px-5 align-self-center" id="submitBtn">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="table-responsive mt-4">
+                            <table class="table text-center bg-light align-middle mb-0">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th class="text-capitalize">#</th>
+                                        <th class="text-capitalize">Website Name</th>
+                                        <th class="text-capitalize">Visit</th>
+                                        <th class="text-capitalize">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableContent"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <script src="./All i need to code/js/bootstrap.bundle.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
