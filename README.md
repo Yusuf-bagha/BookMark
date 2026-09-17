@@ -1,2 +1,2 @@
 # BookMark
-A local-storage bookmark manager built with Bootstrap and vanilla JS — add, validate, visit, and delete saved sites, with duplicate checks and a responsive layout.
+A vanilla JS bookmark manager built with Bootstrap. Users can save a site name and URL, with live input validation (regex-checked name format and URL structure), duplicate-name prevention, and persistent storage via localStorage. Saved bookmarks display in a table where each entry can be opened in a new tab or deleted, with a confirmation prompt and safe HTML rendering to prevent injection from user input. Fully responsive layout with a horizontally scrollable table on mobile.
